@@ -2,7 +2,7 @@
 require('dotenv').config();
 const Hapi = require('@hapi/hapi');
 
-// const ClientError = require('./exceptions/ClientError');
+const ClientError = require('./exceptions/ClientError');
 
 const notes = require('./api/notes');
 const NotesService = require('./services/postgres/NotesService');
