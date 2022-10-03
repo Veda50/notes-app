@@ -53,11 +53,16 @@ class NotesHandler {
     await this._validator.validateNotePayload(request.payload);
     const { id } = request.params;
 
+    const note = await this._service.getNoteById(id);
+
     await this._service.editNoteById(id, request.payload);
 
     return h.response({
       status: 'success',
       message: 'Catatan berhasil diperbarui',
+      data: {
+        note,
+      },
     });
   }
 

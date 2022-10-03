@@ -31,7 +31,7 @@ class AuthenticationsService {
   async deleteRefreshToken(token) {
     const query = {
       text: 'DELETE FROM authentications WHERE token =$1',
-      valuse: [token],
+      values: [token],
     };
 
     await this._pool.query(query);
